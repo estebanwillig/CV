@@ -1,337 +1,324 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:Batang;
-	panose-1:2 3 6 0 0 1 1 1 1 1;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:"\@Batang";
-	panose-1:2 3 6 0 0 1 1 1 1 1;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-a:link, span.MsoHyperlink
-	{color:#0563C1;
-	text-decoration:underline;}
-p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:36.0pt;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:0cm;
-	margin-left:36.0pt;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:0cm;
-	margin-left:36.0pt;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:36.0pt;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-p.Logro, li.Logro, div.Logro
-	{mso-style-name:Logro;
-	margin-top:0cm;
-	margin-right:12.25pt;
-	margin-bottom:3.0pt;
-	margin-left:36.0pt;
-	text-indent:-18.0pt;
-	line-height:11.0pt;
-	font-size:11.0pt;
-	font-family:"Times New Roman",serif;}
-p.Cargo, li.Cargo, div.Cargo
-	{mso-style-name:Cargo;
-	margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:2.0pt;
-	margin-left:0cm;
-	line-height:11.0pt;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	letter-spacing:-.5pt;
-	font-weight:bold;}
-.MsoPapDefault
-	{margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:612.0pt 792.0pt;
-	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0cm;}
-ul
-	{margin-bottom:0cm;}
--->
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Esteban Willig - Técnico en Redes y Telecomunicaciones</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;   /* Gris oscuro corporativo */
+            --secondary-color: #0f766e; /* Color de acento (Verde azulado) */
+            --text-color: #334155;      /* Color del texto legible */
+            --bg-color: #f8fafc;        /* Fondo gris claro de la web */
+            --sheet-bg: #ffffff;        /* Fondo blanco de la hoja */
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        /* Contenedor estilo Hoja A4 / PDF centrado */
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--sheet-bg);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Encabezado */
+        header {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .datos-contacto {
+            margin-top: 12px;
+            font-size: 10.5pt;
+            color: #64748b;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .datos-contacto a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .datos-contacto a:hover {
+            text-decoration: underline;
+        }
+
+        /* Secciones del CV */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 13pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            margin-left: 15px;
+            height: 1px;
+            background-color: #e2e8f0;
+        }
+
+        /* Bloques de experiencia / educación */
+        .bloque {
+            margin-bottom: 18px;
+        }
+
+        .bloque-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .empresa {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .fecha {
+            color: #64748b;
+            font-size: 10pt;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 10.5pt;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            font-size: 10.5pt;
+            margin-bottom: 4px;
+            color: var(--text-color);
+        }
+
+        /* Enlaces institucionales */
+        .link-institucional {
+            font-size: 9.5pt;
+            color: #64748b;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+        
+        .link-institucional a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Habilidades en etiquetas limpias */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .skill-tag {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 10pt;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Optimización para Guardar como PDF (Ctrl + P) */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body lang=ES-AR link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+    <div class="cv-container">
+        
+        <!-- ENCABEZADO -->
+        <header>
+            <h1>ESTEBAN WILLIG</h1>
+            <div class="datos-contacto">
+                <span><strong>Correo electrónico:</strong> <a href="mailto:esteban.willig@gmail.com">esteban.willig@gmail.com</a></span>
+                <span><strong>Teléfono:</strong> +54 9 261 516-5102</span>
+            </div>
+        </header>
 
-<div class=WordSection1>
+        <!-- PERFIL Y OBJETIVOS -->
+        <section>
+            <h2>Perfil y Objetivos</h2>
+            <p>Proactivo, puntual, muy adaptable, alta disponibilidad.</p>
+        </section>
 
-<p class=MsoNormal align=center style='text-align:center'><b><span lang=ES-MX
-style='font-family:"Times New Roman",serif'>ESTEBAN WILLIG</span></b></p>
+        <!-- ÁREAS DE CONOCIMIENTO -->
+        <section>
+            <h2>Áreas de conocimiento</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Instalación y mantenimiento de Redes (LAN, WAN, VLAN, WLAN)</span>
+                <span class="skill-tag">Soporte al usuario IT</span>
+                <span class="skill-tag">SysAdmin y Networking (Equipos activos)</span>
+                <span class="skill-tag">CCTV</span>
+                <span class="skill-tag">Conocimientos Cloud (AWS, Azure)</span>
+            </div>
+        </section>
 
-<p class=MsoNormal align=center style='text-align:center'><span
-style='font-family:"Times New Roman",serif'>Correo electr�nico: </span><a
-href="mailto:esteban.willig@gmail.com"><span style='font-family:"Times New Roman",serif'>esteban.willig@gmail.com</span></a></p>
+        <!-- EDUCACIÓN -->
+        <section>
+            <h2>Educación</h2>
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Técnico Universitario en Redes y Telecomunicaciones</strong></span>
+                    <span class="fecha">2007 — 2010</span>
+                </div>
+                <div class="link-institucional">
+                    Institución: Instituto Tecnológico Universitario (ITU) — <a href="http://itu.uncuyo.edu.ar/" target="_blank">ITU UNCuyo</a>
+                </div>
+            </div>
+        </section>
 
-<p class=MsoNormal align=center style='text-align:center'><span
-style='font-family:"Times New Roman",serif'>Tel�fono: +5492615165102</span></p>
+        <!-- EXPERIENCIA PROFESIONAL -->
+        <section>
+            <h2>Experiencia Profesional</h2>
+            
+            <!-- Grupo ALVS -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Soporte e Infraestructura IT</strong> — <span class="empresa">Grupo ALVS</span></span>
+                    <span class="fecha">Mayo 2021 — Junio 2022</span>
+                </div>
+                <ul>
+                    <li>Soporte a usuario IT.</li>
+                    <li>Instalación y mantenimiento de cableado estructurado.</li>
+                    <li>Configuración y mantenimiento de Telefonía IP (Grandstream).</li>
+                    <li>Instalación, configuración y mantenimiento de cámaras IP.</li>
+                    <li>Responsable de alta y baja de usuarios en Active Directory, Email y telefonía IP.</li>
+                    <li>Instalación, configuración y mantenimiento de equipos de borde Mikrotik.</li>
+                    <li>Instalación, configuración y mantenimiento de enlaces punto a punto Mikrotik.</li>
+                    <li>Configuración de Unifi Controller (USG, Cloud Key, Switch, AP).</li>
+                    <li>Migración de Servidores a CLOUD (AWS).</li>
+                    <li>Seguridad en Backup de DB implementando Immutable Backup de AZURE.</li>
+                    <li>Soporte técnico desplegado de forma presencial en locaciones clave: oficina Espejo, Casino de Mendoza, YPF y parador de Uspallata.</li>
+                </ul>
+            </div>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+            <!-- FreeLancer -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Trabajo FreeLancer</strong></span>
+                    <span class="fecha">2008 — Presente</span>
+                </div>
+                <ul>
+                    <li>Instalación, Configuración y mantenimiento de Cableado Estructurado.</li>
+                    <li>Administración remota en Sistemas y Redes a varios clientes en producción.</li>
+                    <li>Compra, armado, configuración y reparación de PC, Notebooks y NUCs.</li>
+                </ul>
+            </div>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+            <!-- Técnico en Sistemas -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Técnico en Sistemas</strong></span>
+                    <span class="fecha">2013 — 2014</span>
+                </div>
+                <ul>
+                    <li>Instalación y mantenimiento de circuitos cerrados de televisión (CCTV).</li>
+                    <li>Administración de Redes LAN y WAN.</li>
+                    <li>Gestión en entornos de Active Directory.</li>
+                    <li>Soporte técnico directo a Usuarios.</li>
+                </ul>
+            </div>
 
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>�reas
-de conocimiento:</span></b></p>
+            <!-- TMS Group -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Técnico en Sistemas</strong> — <span class="empresa">TMS Group S.A.</span></span>
+                    <span class="fecha">2011 — 2012</span>
+                </div>
+                <ul>
+                    <li>Administración y mantenimiento de redes y equipos activos. Soporte a Usuarios.</li>
+                    <li>Soporte Técnico especializado en infraestructura hotelera (Hotel Diplomatic y Executive).</li>
+                </ul>
+            </div>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n y
-mantenimiento de Redes LAN, WAN, VLAN, WLAN y CCTV.</span></p>
+            <!-- Masalojamientos -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Técnico Técnico</strong> — <span class="empresa">Masalojamientos.com</span></span>
+                    <span class="fecha">2009 — 2011</span>
+                </div>
+                <ul>
+                    <li>Cableado Estructurado, Trabajo en Altura y configuración de enlaces punto a punto Mikrotik. Redes LAN.</li>
+                    <li>Mantenimiento de servidores Microsoft, Linux y administración de Central Telefónica Asterisk.</li>
+                </ul>
+            </div>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Soporte al
-usuario IT. </span></p>
+            <!-- DGE -->
+            <div class="bloque">
+                <div class="bloque-header">
+                    <span><strong>Administrador de Sistemas</strong> — <span class="empresa">Dirección General de Escuelas (DGE)</span></span>
+                    <span class="fecha">2003 — 2019</span>
+                </div>
+                <ul>
+                    <li>A cargo de la sala de informática y del soporte técnico a usuarios finales.</li>
+                    <li>Responsable y administrador del sistema crítico de emisión de analíticos escolares.</li>
+                    <li>Supervisión técnica de la Sección 1 (cobertura tecnológica sobre 14 Escuelas de la Ciudad de Mendoza).</li>
+                </ul>
+            </div>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>SysAdmin y
-Networking. Equipos activos. </span></p>
+        </section>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Nuevos
-conocimientos de CLOUD (AWS, AZURE).</span></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Perfil
-y Objetivos:</span></b></p>
-
-<p class=Cargo><span lang=ES style='font-size:11.0pt;font-family:"Times New Roman",serif;
-font-weight:normal'>Proactivo, puntual, muy adaptable, alta disponibilidad.</span></p>
-
-<p class=Logro><span style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><a href="http://itu.uncuyo.edu.ar/">http://itu.uncuyo.edu.ar//</a></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Educaci�n:</span></b></p>
-
-<p class=Cargo><span lang=ES style='font-size:11.0pt;font-family:"Times New Roman",serif;
-font-weight:normal'>T�tulo: T�cnico Universitario en Redes y
-Telecomunicaciones. (2007-2010)</span></p>
-
-<p class=Logro><span style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><a href="http://itu.uncuyo.edu.ar/">http://itu.uncuyo.edu.ar//</a></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Experiencia
-Profesional:</span></b></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><br>
-<b>Grupo ALVS � (mayo 2021 � junio 2022)</b></span></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Soporte a
-usuario IT.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n y
-mantenimiento de cableado estructurado.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Configuraci�n y
-mantenimiento de Telefon�a IP. (Grandstream).</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n,
-configuraci�n y mantenimiento de c�maras IP.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Responsable de
-alta y baja de usuarios Active Directory, Email, telefon�a IP.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n,
-configuraci�n y mantenimiento de equipos de borde Mikrotik. </span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n,
-configuraci�n y mantenimiento de punto a punto Mikrotik.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Configuraci�n
-Unifi Controller (USG, Cloud Key, Switch, AP).</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Migraci�n de
-Servidores a CLOUD (AWS).</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Seguridad en
-Backup de DB implementando Immutable Backup de AZURE.</span></p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Todo el soporte
-t�cnico ofrecido en diferentes lugares: oficina Espejo, casino de Mendoza, YPF
-y parador de Uspallata.</span></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Trabajo
-FreeLancer � (2008 � presente)</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n,
-Configuraci�n y mantenimiento de Cableado Estructurado.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Administraci�n remota
-en Sistemas y Redes de modo Remoto a varios clientes.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Compra, armado,
-configuraci�n y reparaci�n de PC, Notebooks y NUC.</span></p>
-
-<p class=MsoListParagraphCxSpLast><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>T�cnico
-en Sistemas � (2013 � 2014)</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Instalaci�n y
-mantenimiento de CCTV.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Administraci�n
-de Redes LAN, WAN.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Entorno de
-Active Directory.</span></p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Soporte a
-Usuarios.</span></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>T�cnico
-en TMS Group S.A. � (2011 � 2012)</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Administraci�n
-y mantenimiento de redes y equipos activos. Soporte a Usuarios.</span></p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Soporte T�cnico
-en Hotel Diplomatic y Executive.</span></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>T�cnico
-en Masalojamientos.com � (2009 � 2011)</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Cableado
-Estructurado, Trabajo en Altura, punto a punto mikrotik. Redes LAN.</span></p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Mantenimiento
-de servidores, Microsoft, Linix, Central Telef�nica Asterisk.</span></p>
-
-<p class=MsoNormal style='margin-left:18.0pt'><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Direcci�n
-General de Escuelas � (2003 � 2019)</span></b></p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>A cargo de sala
-de inform�tica y soporte a usuarios.</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>A cargo de
-sistema de anal�ticos.</span></p>
-
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span
-style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-family:"Times New Roman",serif'>Supervisi�n
-Secci�n 1, (14 Escuelas de Ciudad de Mendoza).</span></p>
-
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
-
-</div>
+    </div>
 
 </body>
-
 </html>
