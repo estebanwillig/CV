@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Esteban Willig</title>
     <style>
-        /* Configuración global del navegador para simular entorno PDF */
+        /* Configuración global del navegador para simular el entorno de un visor PDF */
         html, body {
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5; /* Fondo del navegador para resaltar la hoja */
+            background-color: #f4f4f6; /* Fondo gris para resaltar la hoja blanca */
             font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
             color: #111111;
+            line-height: 1.4;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Contenedor principal que emula una hoja A4 física centrada */
-        .cv-page {
+        /* Contenedor que emula una hoja A4 física centrada automáticamente */
+        .pdf-container {
             background-color: #ffffff;
             width: 210mm;
             min-height: 297mm;
-            margin: 40px auto; /* Centra la hoja en el navegador y da espacio arriba/abajo */
-            padding: 20mm 20mm 20mm 20mm; /* Márgenes internos estándar de Harvard */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra elegante estilo PDF */
+            margin: 30px auto; /* Centrado rígido con margen superior e inferior */
+            padding: 20mm 20mm 20mm 20mm; /* Márgenes internos estilo Harvard */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra paralela para efecto papel */
             box-sizing: border-box;
         }
 
-        /* Ajustes específicos para la impresión real o guardado como PDF */
+        /* Optimización en caso de que decidas imprimir o guardar como PDF desde el navegador */
         @media print {
             html, body {
                 background-color: #ffffff;
             }
-            .cv-page {
+            .pdf-container {
                 width: 100%;
                 min-height: initial;
                 margin: 0;
@@ -40,98 +41,93 @@
             }
         }
 
-        /* ENCABEZADO ESTILO HARVARD */
+        /* ENCABEZADO CENTRADO */
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
 
         .name {
-            font-size: 24pt;
+            font-size: 22pt;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 0 6px 0;
-            color: #000000;
+            margin: 0 0 5px 0;
+            letter-spacing: 0.5px;
         }
 
         .contact-info {
             font-size: 10.5pt;
-            color: #444444;
+            color: #333333;
             margin: 0;
-            word-spacing: 1px;
         }
 
         .contact-info span {
-            margin: 0 8px;
-            color: #999999;
+            margin: 0 6px;
+            color: #888888;
         }
 
-        /* LÍNEAS DIVISORIAS Y SECCIONES */
+        /* SECCIONES ESTILO HARVARD */
         .section-title {
-            font-size: 11.5pt;
+            font-size: 11pt;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             border-bottom: 1px solid #000000;
             margin-top: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-bottom: 2px;
         }
 
-        .summary-text {
+        /* CONTENIDO GENERAL Y TEXTOS */
+        .text-block {
             font-size: 10.5pt;
-            line-height: 1.4;
+            margin: 0 0 10px 0;
             text-align: justify;
-            margin: 0 0 12px 0;
         }
 
-        /* BLOQUES DE EXPERIENCIA / EDUCACIÓN */
-        .entry {
-            margin-bottom: 14px;
+        /* ESTRUCTURA PARA ALINEAR EMPRESA A LA IZQUIERDA Y FECHA A LA DERECHA */
+        .entry-item {
+            margin-bottom: 12px;
         }
 
-        /* Fila alineada de forma matemática en los extremos (Compañía / Fechas) */
         .entry-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            font-weight: bold;
+            font-size: 10.5pt;
+            margin-bottom: 3px;
         }
 
         .entry-left {
-            font-size: 10.5pt;
-            font-weight: bold;
-            text-transform: uppercase;
+            text-align: left;
         }
 
         .entry-right {
-            font-size: 10.5pt;
+            text-align: right;
+            font-weight: normal;
             font-style: italic;
-            color: #333333;
         }
 
         .job-title {
             font-size: 10.5pt;
             font-style: italic;
-            font-weight: normal;
+            font-weight: bold;
             margin-bottom: 5px;
         }
 
-        /* LISTAS DE VIÑETAS TÉCNICAS */
+        /* LISTAS DE VIÑETAS CUIDANDO MÁRGENES */
         .bullet-list {
             margin: 0;
             padding-left: 20px;
             font-size: 10.5pt;
-            line-height: 1.4;
-            text-align: justify;
         }
 
         .bullet-list li {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
+            text-align: justify;
         }
 
-        /* ÁREAS DE CONOCIMIENTO (SKILLS) */
+        /* SECCIÓN DE COMPETENCIAS */
         .skills-container {
             margin-top: 6px;
             font-size: 10.5pt;
@@ -140,6 +136,7 @@
 
         .skills-line {
             margin-bottom: 5px;
+            text-align: justify;
         }
 
         .skills-label {
@@ -149,7 +146,7 @@
 </head>
 <body>
 
-    <div class="cv-page">
+    <div class="pdf-container">
 
         <div class="header">
             <h1 class="name">Esteban Willig</h1>
@@ -159,111 +156,111 @@
         </div>
 
         <div class="section-title">Perfil Profesional</div>
-        <p class="summary-text">
-            Profesional proactivo, puntual y con alta disponibilidad y capacidad de adaptación[cite: 10]. Cuenta con una sólida trayectoria en soporte técnico especializado, administración de infraestructura crítica de sistemas y diseño de redes corporativas. Orientado a la resolución eficiente de incidencias y optimización de entornos locales y cloud.
+        <p class="text-block">
+            Profesional proactivo, puntual y con alta disponibilidad y capacidad de adaptación. Cuenta con una sólida trayectoria en soporte técnico especializado, administración de infraestructura crítica de sistemas y diseño de redes corporativas. Orientado a la resolución eficiente de incidencias y optimización de entornos locales y cloud.
         </p>
 
         <div class="section-title">Experiencia Profesional</div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Grupo ALVS</div>
                 <div class="entry-right">Mayo 2021 — Junio 2022</div>
             </div>
-            <div class="job-title">Soporte e Infraestructura IT [cite: 16]</div>
+            <div class="job-title">Soporte e Infraestructura IT</div>
             <ul class="bullet-list">
-                <li>Garantizó el soporte técnico avanzado orientado al usuario de TI[cite: 17].</li>
-                <li>Diseñó, instaló y ejecutó el mantenimiento correctivo de cableado estructurado[cite: 18].</li>
-                <li>Configuró y mantuvo de forma integral redes de Telefonía IP Grandstream[cite: 19].</li>
-                <li>Realizó la instalación, parametrización y soporte de sistemas de cámaras IP[cite: 20].</li>
-                <li>Responsable absoluto de la gestión de accesos (altas y bajas) en entornos Active Directory, Email corporativo y telefonía IP[cite: 21].</li>
-                <li>Instaló, configuró y administró equipamiento de borde y enlaces inalámbricos punto a punto Mikrotik[cite: 22, 23].</li>
-                <li>Administró la arquitectura inalámbrica y de conmutación mediante Unifi Controller (USG, Cloud Key, Switch, AP)[cite: 24].</li>
-                <li>Lideró la migración de servidores físicos locales hacia plataformas Cloud (AWS)[cite: 25].</li>
-                <li>Robusteció la seguridad informática implementando esquemas de Immutable Backup en Microsoft Azure para bases de datos[cite: 26].</li>
-                <li>Proveyó despliegue técnico y soporte operativo presencial en nodos estratégicos del grupo: oficina Espejo, Casino de Mendoza, YPF y parador de Uspallata[cite: 27].</li>
+                <li>Garantizó el soporte técnico avanzado orientado al usuario de TI.</li>
+                <li>Diseñó, instaló y ejecutó el mantenimiento correctivo de cableado estructurado.</li>
+                <li>Configuró y mantuvo de forma integral redes de Telefonía IP Grandstream.</li>
+                <li>Realizó la instalación, parametrización y soporte de sistemas de cámaras IP.</li>
+                <li>Responsable absoluto de la gestión de accesos (altas y bajas) en entornos Active Directory, Email corporativo y telefonía IP.</li>
+                <li>Instaló, configuró y administró equipamiento de borde y enlaces inalámbricos punto a punto Mikrotik.</li>
+                <li>Administró la arquitectura inalámbrica y de conmutación mediante Unifi Controller (USG, Cloud Key, Switch, AP).</li>
+                <li>Lideró la migración de servidores físicos locales hacia plataformas Cloud (AWS).</li>
+                <li>Robusteció la seguridad informática implementando esquemas de Immutable Backup en Microsoft Azure para bases de datos.</li>
+                <li>Proveyó despliegue técnico y soporte operativo presencial en nodos estratégicos del grupo: oficina Espejo, Casino de Mendoza, YPF y parador de Uspallata.</li>
             </ul>
         </div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Dirección General de Escuelas</div>
                 <div class="entry-right">2003 — 2019</div>
             </div>
-            <div class="job-title">Administrador de Sistemas [cite: 43]</div>
+            <div class="job-title">Administrador de Sistemas</div>
             <ul class="bullet-list">
-                <li>Lideró la gestión integral de la sala de informática y brindó soporte técnico continuo a usuarios finales[cite: 44].</li>
-                <li>Ejerció como responsable directo de la administración del sistema crítico provincial para la emisión de analíticos escolares[cite: 45].</li>
-                <li>Coordinó la supervisión tecnológica de la Sección 1, con cobertura técnica sobre 14 escuelas de la Ciudad de Mendoza[cite: 46].</li>
+                <li>Lideró la gestión integral de la sala de informática y brindó soporte técnico continuo a usuarios finales.</li>
+                <li>Ejerció como responsable directo de la administración del sistema crítico provincial para la emisión de analíticos escolares.</li>
+                <li>Coordinó la supervisión tecnológica de la Sección 1, con cobertura técnica sobre 14 escuelas de la Ciudad de Mendoza.</li>
             </ul>
         </div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Trabajo FreeLancer</div>
                 <div class="entry-right">2008 — Presente</div>
             </div>
-            <div class="job-title">Consultor Independiente en Sistemas y Redes [cite: 28]</div>
+            <div class="job-title">Consultor Independiente en Sistemas y Redes</div>
             <ul class="bullet-list">
-                <li>Diseñó y ejecutó proyectos a medida de instalación y certificación de cableado estructurado[cite: 29].</li>
-                <li>Provee administración remota continua de sistemas complejos y redes informáticas para múltiples clientes corporativos en producción[cite: 30].</li>
-                <li>Gestionó el ciclo de hardware: diagnóstico, compra, armado, configuración avanzada y reparación de PC, Notebooks y arquitecturas NUC[cite: 31].</li>
+                <li>Diseñó y ejecutó proyectos a medida de instalación y certificación de cableado estructurado.</li>
+                <li>Provee administración remota continua de sistemas complejos y redes informáticas para múltiples clientes corporativos en producción.</li>
+                <li>Gestionó el ciclo de hardware: diagnóstico, compra, armado, configuración avanzada y reparación de PC, Notebooks y arquitecturas NUC.</li>
             </ul>
         </div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Empresa de Soluciones y Seguridad</div>
                 <div class="entry-right">2013 — 2014</div>
             </div>
-            <div class="job-title">Técnico en Sistemas [cite: 32]</div>
+            <div class="job-title">Técnico en Sistemas</div>
             <ul class="bullet-list">
-                <li>Planificó e instaló sistemas de seguridad electrónica y circuitos cerrados de televisión (CCTV)[cite: 33].</li>
-                <li>Administró redes informáticas de datos bajo arquitecturas de comunicación LAN y WAN[cite: 34].</li>
-                <li>Gestionó recursos corporativos bajo dominios y entornos centralizados de Active Directory[cite: 35].</li>
-                <li>Brindó soporte técnico directo y resolución de incidencias a usuarios finales[cite: 36].</li>
+                <li>Planificó e instaló sistemas de seguridad electrónica y circuitos cerrados de televisión (CCTV).</li>
+                <li>Administró redes informáticas de datos bajo arquitecturas de comunicación LAN y WAN.</li>
+                <li>Gestionó recursos corporativos bajo dominios y entornos centralizados de Active Directory.</li>
+                <li>Brindó soporte técnico directo y resolución de incidencias a usuarios finales.</li>
             </ul>
         </div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">TMS Group S.A.</div>
                 <div class="entry-right">2011 — 2012</div>
             </div>
-            <div class="job-title">Técnico Especialista en Infraestructura [cite: 37]</div>
+            <div class="job-title">Técnico Especialista en Infraestructura</div>
             <ul class="bullet-list">
-                <li>Administró redes locales corporativas y realizó el mantenimiento técnico de equipos activos de comunicaciones con soporte al usuario[cite: 38].</li>
-                <li>Garantizó soporte técnico de alta prioridad enfocado en la infraestructura crítica hotelera de nivel internacional (Hotel Diplomatic y Executive)[cite: 39].</li>
+                <li>Administró redes locales corporativas y realizó el mantenimiento técnico de equipos activos de comunicaciones con soporte al usuario.</li>
+                <li>Garantizó soporte técnico de alta prioridad enfocado en la infraestructura crítica hotelera de nivel internacional (Hotel Diplomatic y Executive).</li>
             </ul>
         </div>
 
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Masalojamientos.com</div>
                 <div class="entry-right">2009 — 2011</div>
             </div>
-            <div class="job-title">Técnico en Redes y Servidores [cite: 40]</div>
+            <div class="job-title">Técnico en Redes y Servidores</div>
             <ul class="bullet-list">
-                <li>Desplegó infraestructura de cableado estructurado, ejecutó trabajos técnicos en altura y configuró radioenlaces punto a punto Mikrotik en entornos LAN[cite: 41].</li>
-                <li>Efectuó el mantenimiento lógico de servidores empresariales Microsoft y Linux, junto con la administración de centrales telefónicas Asterisk[cite: 42].</li>
+                <li>Desplegó infraestructura de cableado estructurado, ejecutó trabajos técnicos en altura y configuró radioenlaces punto a punto Mikrotik en entornos LAN.</li>
+                <li>Efectuó el mantenimiento lógico de servidores empresariales Microsoft y Linux, junto con la administración de centrales telefónicas Asterisk.</li>
             </ul>
         </div>
 
         <div class="section-title">Educación</div>
-        <div class="entry">
+        <div class="entry-item">
             <div class="entry-row">
                 <div class="entry-left">Instituto Tecnológico Universitario (ITU) — UNCuyo</div>
                 <div class="entry-right">2007 — 2010</div>
             </div>
-            <div class="job-title">Técnico Universitario en Redes y Telecomunicaciones [cite: 13]</div>
+            <div class="job-title" style="font-weight: normal;">Técnico Universitario en Redes y Telecomunicaciones</div>
         </div>
 
         <div class="section-title">Áreas de Conocimiento y Competencias</div>
         <div class="skills-container">
-            <div class="skills-line"><span class="skills-label">Infraestructura y Redes:</span> Instalación y mantenimiento de Redes LAN, WAN, VLAN, WLAN, Enlaces Mikrotik, Unifi Controller y Cableado Estructurado[cite: 5, 22, 24].</div>
-            <div class="skills-line"><span class="skills-label">Sistemas y Servidores (SysAdmin):</span> Administración avanzada de servidores Microsoft y Linux, Entornos Active Directory, Telefonía IP y Centrales Asterisk[cite: 7, 21, 42].</div>
-            <div class="skills-line"><span class="skills-label">Tecnologías Cloud:</span> Gestión, migración y políticas de resguardo seguro de bases de datos en Amazon Web Services (AWS) y Microsoft Azure (Immutable Backups)[cite: 8, 25, 26].</div>
-            <div class="skills-line"><span class="skills-label">Seguridad Electrónica y Soporte:</span> Diseño y montaje de Circuitos Cerrados de Televisión (CCTV), Cámaras IP y asistencia técnica dedicada al usuario final[cite: 5, 6, 20].</div>
+            <div class="skills-line"><span class="skills-label">Infraestructura y Redes:</span> Instalación y mantenimiento de Redes LAN, WAN, VLAN, WLAN, Enlaces Mikrotik, Unifi Controller y Cableado Estructurado.</div>
+            <div class="skills-line"><span class="skills-label">Sistemas y Servidores (SysAdmin):</span> Administración avanzada de servidores Microsoft y Linux, Entornos Active Directory, Telefonía IP y Centrales Asterisk.</div>
+            <div class="skills-line"><span class="skills-label">Tecnologías Cloud:</span> Gestión, migración y políticas de resguardo seguro de bases de datos en Amazon Web Services (AWS) y Microsoft Azure (Immutable Backups).</div>
+            <div class="skills-line"><span class="skills-label">Seguridad Electrónica y Soporte:</span> Diseño y montaje de Circuitos Cerrados de Televisión (CCTV), Cámaras IP y asistencia técnica dedicada al usuario final.</div>
         </div>
 
     </div>
