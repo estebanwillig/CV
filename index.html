@@ -2,322 +2,235 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Esteban Willig - Técnico en Redes y Telecomunicaciones</title>
+    <title>CV - Esteban Willig</title>
     <style>
-        :root {
-            --primary-color: #1e293b;   /* Gris oscuro corporativo */
-            --secondary-color: #0f766e; /* Color de acento (Verde azulado) */
-            --text-color: #334155;      /* Color del texto legible */
-            --bg-color: #f8fafc;        /* Fondo gris claro de la web */
-            --sheet-bg: #ffffff;        /* Fondo blanco de la hoja */
+        @page {
+            size: A4;
+            margin: 15mm 15mm 15mm 15mm;
+            background-color: #ffffff;
         }
-
+        
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.5;
-            padding: 40px 20px;
-        }
-
-        /* Contenedor estilo Hoja A4 / PDF centrado */
-        .cv-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--sheet-bg);
-            padding: 50px;
-            border-radius: 4px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Encabezado */
-        header {
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 26pt;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .datos-contacto {
-            margin-top: 12px;
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+            color: #111111;
+            line-height: 1.4;
             font-size: 10.5pt;
-            color: #64748b;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
         }
 
-        .datos-contacto a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        .datos-contacto a:hover {
-            text-decoration: underline;
-        }
-
-        /* Secciones del CV */
-        section {
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 13pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            margin-left: 15px;
-            height: 1px;
-            background-color: #e2e8f0;
-        }
-
-        /* Bloques de experiencia / educación */
-        .bloque {
+        /* Encabezado Estilo Harvard (Centrado, Limpio, Jerárquico) */
+        .header {
+            text-align: center;
             margin-bottom: 18px;
         }
 
-        .bloque-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11pt;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 4px;
+        .name {
+            font-size: 22pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
+            color: #000000;
         }
 
-        .empresa {
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
-        .fecha {
-            color: #64748b;
+        .contact-info {
             font-size: 10pt;
-            font-weight: normal;
+            color: #444444;
+            margin: 0;
+            word-spacing: 2px;
         }
 
-        p {
-            font-size: 10.5pt;
+        .contact-info span {
+            margin: 0 6px;
+        }
+
+        /* Secciones principales con línea inferior sólida */
+        .section-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #000000;
+            margin-top: 16px;
             margin-bottom: 8px;
+            padding-bottom: 2px;
+            page-break-after: avoid;
         }
 
-        ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
+        .summary-text {
+            text-align: justify;
+            margin: 0 0 10px 0;
         }
 
-        li {
-            font-size: 10.5pt;
+        /* Bloques de experiencia y educación */
+        .entry {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        /* Diseño de fila superior para Empresa (Izq) y Fecha (Der) */
+        .entry-row {
+            display: table;
+            width: 100%;
+            margin-bottom: 2px;
+        }
+
+        .entry-cell-left {
+            display: table-cell;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .entry-cell-right {
+            display: table-cell;
+            text-align: right;
+            font-style: italic;
+            color: #333333;
+        }
+
+        .job-title {
+            font-style: italic;
+            font-weight: normal;
             margin-bottom: 4px;
-            color: var(--text-color);
         }
 
-        /* Enlaces institucionales */
-        .link-institucional {
-            font-size: 9.5pt;
-            color: #64748b;
-            margin-top: -10px;
-            margin-bottom: 15px;
-        }
-        
-        .link-institucional a {
-            color: var(--secondary-color);
-            text-decoration: none;
+        /* Listas de viñetas estilo Harvard (ajustadas a la izquierda, compactas) */
+        .bullet-list {
+            margin: 0;
+            padding-left: 18px;
+            text-align: justify;
         }
 
-        /* Habilidades en etiquetas limpias */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
+        .bullet-list li {
+            margin-bottom: 3px;
         }
 
-        .skill-tag {
-            background-color: #f1f5f9;
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 10pt;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
+        /* Competencias / Áreas de conocimiento */
+        .skills-container {
+            margin-top: 4px;
         }
 
-        /* Optimización para Guardar como PDF (Ctrl + P) */
-        @media print {
-            body {
-                background-color: #fff;
-                padding: 0;
-            }
-            .cv-container {
-                box-shadow: none;
-                border: none;
-                padding: 0;
-                margin: 0;
-                max-width: 100%;
-            }
+        .skills-line {
+            margin-bottom: 4px;
+        }
+
+        .skills-label {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="cv-container">
-        
-        <!-- ENCABEZADO -->
-        <header>
-            <h1>ESTEBAN WILLIG</h1>
-            <div class="datos-contacto">
-                <span><strong>Correo electrónico:</strong> <a href="mailto:esteban.willig@gmail.com">esteban.willig@gmail.com</a></span>
-                <span><strong>Teléfono:</strong> +54 9 261 516-5102</span>
-            </div>
-        </header>
+    <div class="header">
+        <h1 class="name">Esteban Willig</h1>
+        <div class="contact-info">
+            Mendoza, Argentina <span>|</span> +54 9 261 516-5102 <span>|</span> esteban.willig@gmail.com
+        </div>
+    </div>
 
-        <!-- PERFIL Y OBJETIVOS -->
-        <section>
-            <h2>Perfil y Objetivos</h2>
-            <p>Proactivo, puntual, muy adaptable, alta disponibilidad.</p>
-        </section>
+    <div class="section-title">Perfil Profesional</div>
+    <p class="summary-text">
+        Profesional de TI orientado a resultados, con alta capacidad de adaptación, puntualidad y disponibilidad. Sólida trayectoria en soporte técnico, administración de sistemas complejos y arquitectura de redes. Experto en resolver incidencias críticas tanto en entornos locales como en la nube, optimizando la continuidad operativa y robusteciendo la seguridad informática corporativa.
+    </p>
 
-        <!-- ÁREAS DE CONOCIMIENTO -->
-        <section>
-            <h2>Áreas de conocimiento</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Instalación y mantenimiento de Redes (LAN, WAN, VLAN, WLAN)</span>
-                <span class="skill-tag">Soporte IT al usuario</span>
-                <span class="skill-tag">SysAdmin y Networking (Equipos activos)</span>
-                <span class="skill-tag">CCTV</span>
-                <span class="skill-tag">Conocimientos Cloud (AWS, Azure)</span>
-            </div>
-        </section>
+    <div class="section-title">Experiencia Profesional</div>
 
-        <!-- EDUCACIÓN -->
-        <section>
-            <h2>Educación</h2>
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Técnico Universitario en Redes y Telecomunicaciones</strong></span>
-                    <span class="fecha">2007 — 2010</span>
-                </div>
-                <div class="link-institucional">
-                    Institución: Instituto Tecnológico Universitario (ITU) — <a href="http://itu.uncuyo.edu.ar/" target="_blank">ITU UNCuyo</a>
-                </div>
-            </div>
-        </section>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">GRUPO ALVS</div>
+            <div class="entry-cell-right">Mayo 2021 — Junio 2022</div>
+        </div>
+        <div class="job-title">Especialista en Soporte e Infraestructura IT</div>
+        <ul class="bullet-list">
+            <li>Administró de extremo a extremo el ciclo de vida de usuarios (altas, bajas y accesos) en Active Directory, correos corporativos y redes de telefonía IP.</li>
+            <li>Diseñó, instaló y ejecutó el mantenimiento preventivo de cableado estructurado, redes cerradas de CCTV IP y centrales de telefonía IP Grandstream.</li>
+            <li>Configuró y optimizó firewalls de borde, ruteadores y enlaces punto a punto Mikrotik, así como la infraestructura centralizada de Unifi Controller (USG, Cloud Key, Switch y APs).</li>
+            <li>Lideró la migración estratégica de servidores locales hacia entornos Cloud (AWS) e implementó políticas críticas de protección de datos mediante Azure Immutable Backup para bases de datos.</li>
+            <li>Desplegó soporte técnico e infraestructura presencial en nodos de negocio críticos: oficina Espejo, Casino de Mendoza, YPF y parador de Uspallata.</li>
+        </ul>
+    </div>
 
-        <!-- EXPERIENCIA PROFESIONAL -->
-        <section>
-            <h2>Experiencia Profesional</h2>
-            
-            <!-- Grupo ALVS -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Soporte e Infraestructura IT</strong> — <span class="empresa">Grupo ALVS</span></span>
-                    <span class="fecha">Mayo 2021 — Junio 2022</span>
-                </div>
-                <ul>
-                    <li>Soporte a usuario IT.</li>
-                    <li>Instalación y mantenimiento de cableado estructurado.</li>
-                    <li>Configuración y mantenimiento de Telefonía IP (Grandstream).</li>
-                    <li>Instalación, configuración y mantenimiento de cámaras IP.</li>
-                    <li>Responsable de alta y baja de usuarios en Active Directory, Email y telefonía IP.</li>
-                    <li>Instalación, configuración y mantenimiento de equipos de borde Mikrotik.</li>
-                    <li>Instalación, configuración y mantenimiento de enlaces punto a punto Mikrotik.</li>
-                    <li>Configuración de Unifi Controller (USG, Cloud Key, Switch, AP).</li>
-                    <li>Migración de Servidores a CLOUD (AWS).</li>
-                    <li>Seguridad en Backup de DB implementando Immutable Backup de AZURE.</li>
-                    <li>Soporte técnico desplegado de forma presencial en locaciones clave: oficina Espejo, Casino de Mendoza, YPF y parador de Uspallata.</li>
-                </ul>
-            </div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">DIRECCIÓN GENERAL DE ESCUELAS (DGE)</div>
+            <div class="entry-cell-right">2003 — 2019</div>
+        </div>
+        <div class="job-title">Administrador de Sistemas / Soporte Técnico</div>
+        <ul class="bullet-list">
+            <li>Gestionó de manera integral la sala de informática y proveyó soporte técnico avanzado a usuarios finales, garantizando el uptime del parque tecnológico.</li>
+            <li>Responsable directo de la administración, seguridad y mantenimiento del sistema crítico de emisión de analíticos escolares a nivel provincial.</li>
+            <li>Ejerció la supervisión técnica de la Sección 1, coordinando y ejecutando la cobertura tecnológica integral sobre 14 instituciones educativas de la Ciudad de Mendoza.</li>
+        </ul>
+    </div>
 
-            <!-- FreeLancer -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Trabajo FreeLancer</strong></span>
-                    <span class="fecha">2008 — Presente</span>
-                </div>
-                <ul>
-                    <li>Instalación, Configuración y mantenimiento de Cableado Estructurado.</li>
-                    <li>Administración remota en Sistemas y Redes a varios clientes en producción.</li>
-                    <li>Compra, armado, configuración y reparación de PC, Notebooks y NUCs.</li>
-                </ul>
-            </div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">TRABAJO FREELANCE</div>
+            <div class="entry-cell-right">2008 — Presente</div>
+        </div>
+        <div class="job-title">Consultor Independiente en Sistemas y Redes</div>
+        <ul class="bullet-list">
+            <li>Provee administración remota de sistemas corporativos y plataformas de red para múltiples clientes comerciales con entornos en producción activa.</li>
+            <li>Efectúa consultoría técnica para la adquisición, ensamblado, diagnóstico y reparación de hardware crítico (PCs de alto rendimiento, Notebooks corporativas y arquitecturas NUC).</li>
+            <li>Diseña y ejecuta proyectos personalizados de infraestructura de conectividad y cableado estructurado.</li>
+        </ul>
+    </div>
 
-            <!-- Técnico en Sistemas -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Técnico en Sistemas</strong></span>
-                    <span class="fecha">2013 — 2014</span>
-                </div>
-                <ul>
-                    <li>Instalación y mantenimiento de circuitos cerrados de televisión (CCTV).</li>
-                    <li>Administración de Redes LAN y WAN.</li>
-                    <li>Gestión en entornos de Active Directory.</li>
-                    <li>Soporte técnico directo a Usuarios.</li>
-                </ul>
-            </div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">TMS GROUP S.A.</div>
+            <div class="entry-cell-right">2011 — 2012</div>
+        </div>
+        <div class="job-title">Técnico en Sistemas</div>
+        <ul class="bullet-list">
+            <li>Administró y mantuvo la infraestructura de redes LAN/WAN y equipos activos de comunicaciones, asegurando un soporte de incidentes de Nivel 2 y 3.</li>
+            <li>Prestó soporte técnico de alta prioridad especializado en infraestructura hotelera de primer nivel internacional (Hotel Diplomatic y Hotel Executive).</li>
+        </ul>
+    </div>
 
-            <!-- TMS Group -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Técnico en Sistemas</strong> — <span class="empresa">TMS Group S.A.</span></span>
-                    <span class="fecha">2011 — 2012</span>
-                </div>
-                <ul>
-                    <li>Administración y mantenimiento de redes y equipos activos. Soporte a Usuarios.</li>
-                    <li>Soporte Técnico especializado en infraestructura hotelera (Hotel Diplomatic y Executive).</li>
-                </ul>
-            </div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">MASALOJAMIENTOS.COM</div>
+            <div class="entry-cell-right">2009 — 2011</div>
+        </div>
+        <div class="job-title">Técnico en Infraestructura y Conectividad</div>
+        <ul class="bullet-list">
+            <li>Realizó el despliegue operativo de cableado estructurado, trabajos técnicos en altura y configuración/alineación de enlaces inalámbricos punto a punto de Mikrotik.</li>
+            <li>A cargo del mantenimiento preventivo y correctivo de servidores en entornos mixtos Microsoft / Linux y la administración de la central telefónica basada en Asterisk.</li>
+        </ul>
+    </div>
 
-            <!-- Masalojamientos -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Técnico Técnico</strong> — <span class="empresa">Masalojamientos.com</span></span>
-                    <span class="fecha">2009 — 2011</span>
-                </div>
-                <ul>
-                    <li>Cableado Estructurado, Trabajo en Altura y configuración de enlaces punto a punto Mikrotik. Redes LAN.</li>
-                    <li>Mantenimiento de servidores Microsoft, Linux y administración de Central Telefónica Asterisk.</li>
-                </ul>
-            </div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">EMPRESA DE SEGURIDAD Y REDES</div>
+            <div class="entry-cell-right">2013 — 2014</div>
+        </div>
+        <div class="job-title">Técnico en Sistemas</div>
+        <ul class="bullet-list">
+            <li>Instaló y administró circuitos cerrados de televisión (CCTV) avanzados y redes corporativas bajo dominios de Active Directory, brindando soporte directo al usuario.</li>
+        </ul>
+    </div>
 
-            <!-- DGE -->
-            <div class="bloque">
-                <div class="bloque-header">
-                    <span><strong>Administrador de Sistemas</strong> — <span class="empresa">Dirección General de Escuelas (DGE)</span></span>
-                    <span class="fecha">2003 — 2019</span>
-                </div>
-                <ul>
-                    <li>A cargo de la sala de informática y del soporte técnico a usuarios finales.</li>
-                    <li>Responsable y administrador del sistema crítico de emisión de analíticos escolares.</li>
-                    <li>Supervisión técnica de la Sección 1 (cobertura tecnológica sobre 14 Escuelas de la Ciudad de Mendoza).</li>
-                </ul>
-            </div>
+    <div class="section-title">Educación</div>
+    <div class="entry">
+        <div class="entry-row">
+            <div class="entry-cell-left">INSTITUTO TECNOLÓGICO UNIVERSITARIO (ITU) — UNCuyo</div>
+            <div class="entry-cell-right">2007 — 2010</div>
+        </div>
+        <div class="job-title">Técnico Universitario en Redes y Telecomunicaciones</div>
+    </div>
 
-        </section>
-
+    <div class="section-title">Áreas de Conocimiento y Competencias</div>
+    <div class="skills-container">
+        <div class="skills-line"><span class="skills-label">Networking e Infraestructura:</span> Redes LAN, WAN, VLAN, WLAN, Enlaces Mikrotik, Unifi Controller, Cableado Estructurado, Conectividad Inalámbrica.</div>
+        <div class="skills-line"><span class="skills-label">Administración de Sistemas (SysAdmin):</span> Active Directory, Servidores Linux (Debian/Ubuntu), Microsoft Windows Server, Centrales IP Asterisk, Soporte IT Avanzado.</div>
+        <div class="skills-line"><span class="skills-label">Tecnologías Cloud:</span> Amazon Web Services (AWS), Microsoft Azure (Implementación de Immutable Backups corporativos).</div>
+        <div class="skills-line"><span class="skills-label">Seguridad y Monitoreo:</span> Sistemas de Circuito Cerrado de Televisión (CCTV), Cámaras IP, Políticas de Seguridad y Respaldo de Bases de Datos.</div>
     </div>
 
 </body>
