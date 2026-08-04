@@ -131,6 +131,34 @@
             margin-bottom: 3px;
             text-align: justify;
         }
+
+        /* --- ADAPTACIÓN RESPONSIVA PARA CELULARES --- */
+        @media (max-width: 768px) {
+            body {
+                background-color: #ffffff; /* En celulares quita el fondo gris exterior */
+            }
+            .pdf-page {
+                width: 100% !important;
+                min-height: 100vh;
+                margin: 0 !important;
+                padding: 15px !important;
+                box-shadow: none !important; /* Quita la sombra de hoja para aprovechar toda la pantalla */
+            }
+            .entry-row {
+                flex-direction: column; /* Pone la fecha abajo del puesto en pantallas chicas */
+                align-items: flex-start;
+            }
+            .entry-right {
+                text-align: left;
+                font-size: 10pt;
+                color: #555555;
+                margin-top: 2px;
+            }
+            .contact-info span {
+                display: inline-block;
+                margin: 0 4px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -254,5 +282,3 @@
 
 </body>
 </html>
-
-```
